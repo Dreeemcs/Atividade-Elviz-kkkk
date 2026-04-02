@@ -7,7 +7,9 @@ public class validacao {
         // Cria um objeto Scanner para ler a entrada do "usuário"
         Scanner scanner = new Scanner(System.in);
 
-        //ENQUANTO o usuário não acertar o número secreto, o loop continuará solicitando palpites e fornecendo feedback sobre se o palpite é maior ou menor que o número secreto
+        // ENQUANTO o usuário não acertar o número secreto, o loop continuará
+        // solicitando palpites e fornecendo feedback sobre se o palpite é maior ou
+        // menor que o número secreto
         while (true) {
             System.out.print("Digite sua idade entre 1 e 18: ");
             int numero = scanner.nextInt(); // Lê a idade digitada pelo "usuário" e armazena na variável numero
@@ -15,8 +17,9 @@ public class validacao {
             // Chama o método validarNumero para verificar se a idade é válida
             if (validarNumero(numero)) {
                 System.out.println("idade aprovada, seja bem vindo");
-                break; // Se a idade for válida, sai do loop 
-            } else // Se a idade for inválida, exibe uma mensagem de erro e continua o loop para pedir a idade novamente
+                break; // Se a idade for válida, sai do loop
+            } else // Se a idade for inválida, exibe uma mensagem de erro e continua o loop para
+                   // pedir a idade novamente
             {
                 System.out.println("Ops a idade é incompativel, tente novamente");
 
@@ -25,7 +28,10 @@ public class validacao {
         }
 
     }
-    // O método validarNumero recebe um número inteiro como parâmetro e retorna true se o número for maior ou igual a 0 e menor ou igual a 10, caso contrário retorna false
+
+    // O método validarNumero recebe um número inteiro como parâmetro e retorna true
+    // se o número for maior ou igual a 0 e menor ou igual a 10, caso contrário
+    // retorna false
     public static boolean validarNumero(int numero) {
         // Verifica se o número é maior ou igual a 0 e menor ou igual a 10
         if (numero > 0 && numero <= 10) {
