@@ -1,3 +1,4 @@
+import java.util.Random;// Importa a classe Random para gerar números aleatórios
 import java.util.Scanner; // Importa a classe Scanner para ler a entrada do "usuário"
 
 // A classe Jogo é responsável por implementar um jogo de adivinhação onde o "usuário" deve tentar adivinhar um número secreto gerado aleatoriamente dentro de um limite definido pelo "usuário"
@@ -6,6 +7,7 @@ public class Jogo {
     private int limite;
     private int numeroSecreto;
     private Scanner scanner = new Scanner(System.in);
+    private Random random = new Random();
 
     // O método iniciarJogo é responsável por iniciar o jogo, solicitar o limite para o número secreto, gerar o número secreto e permitir que o "usuário" faça palpites até acertar o número secreto
     public void iniciarJogo() {
@@ -14,7 +16,7 @@ public class Jogo {
         System.out.println("Digite o limite para o numero secreto: ");
 
         limite = scanner.nextInt(); // Lê o limite digitado pelo "usuário" e armazena na variável "limite"
-        numeroSecreto = (int) (Math.random() * limite) + 1; // Gera um número secreto aleatório entre 1 e o limite definido pelo "usuário" e armazena na variável "numeroSecreto"
+        numeroSecreto = random.nextInt(limite) + 1; // Gera um número secreto aleatório entre 1 e o limite definido pelo "usuário" e armazena na variável "numeroSecreto"
 
         System.out.println("Tente advinhar o numero secreto entre 1 e " + limite);
 
@@ -32,7 +34,6 @@ public class Jogo {
                 System.out.println("Você errou tente um número maior!");
             } else {
                 System.out.println("Você errou tente um número menor!");
-                
             }
         }
 
