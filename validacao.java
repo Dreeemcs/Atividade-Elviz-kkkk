@@ -9,7 +9,7 @@ public class validacao {
 
         // Loop infinito para continuar pedindo a idade até que seja válida
         while (true) {
-            System.out.print("Digite sua idade entre 1 e 18: "); // Solicita ao "usuário" que digite sua idade
+            System.out.print("Digite sua idade entre 1 e 18: ");
             int numero = scanner.nextInt(); // Lê a idade digitada pelo "usuário" e armazena na variável numero
 
             // Chama o método validarNumero para verificar se a idade é válida
