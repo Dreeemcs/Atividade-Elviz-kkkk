@@ -28,7 +28,7 @@ public class validacao {
     // O método validarNumero recebe um número inteiro como parâmetro e retorna true se o número for maior ou igual a 0 e menor ou igual a 10, caso contrário retorna false
     public static boolean validarNumero(int numero) {
         // Verifica se o número é maior ou igual a 0 e menor ou igual a 10
-        if (numero > 0 && numero <= 18) {
+        if (numero > 0 && numero <= 10) {
             return true;
         } else {
             return false;
