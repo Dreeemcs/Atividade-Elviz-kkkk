@@ -7,7 +7,7 @@ public class validacao {
         // Cria um objeto Scanner para ler a entrada do "usuário"
         Scanner scanner = new Scanner(System.in);
 
-        // Loop infinito para continuar pedindo a idade até que seja válida
+        //ENQUANTO o usuário não acertar o número secreto, o loop continuará solicitando palpites e fornecendo feedback sobre se o palpite é maior ou menor que o número secreto
         while (true) {
             System.out.print("Digite sua idade entre 1 e 18: ");
             int numero = scanner.nextInt(); // Lê a idade digitada pelo "usuário" e armazena na variável numero
