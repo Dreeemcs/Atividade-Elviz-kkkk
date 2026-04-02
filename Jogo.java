@@ -1,47 +1,35 @@
 import java.util.Random;// Importa a classe Random para gerar números aleatórios
-import java.util.Scanner; // Importa a classe Scanner para ler a entrada do "usuário"
+import java.util.Scanner; // Importa a classe Scanner para ler a entrada do usuário
 
-// A classe Jogo é responsável por implementar um jogo de adivinhação onde o "usuário" deve tentar adivinhar um número secreto gerado aleatoriamente dentro de um limite definido pelo "usuário"
+// Implementa um jogo de adivinhação com número secreto aleatório.
 public class Jogo {
-    // Declaração de variáveis para armazenar o limite do número secreto, o número
-    // secreto em si e um objeto Scanner para ler a entrada do "usuário"
+    // Armazena o limite, o número secreto e os objetos de entrada/aleatoriedade.
     private int limite;
     private int numeroSecreto;
     private Scanner scanner = new Scanner(System.in);
     private Random random = new Random();
 
-    // O método iniciarJogo é responsável por iniciar o jogo, solicitar o limite
-    // para o número secreto, gerar o número secreto e permitir que o "usuário" faça
-    // palpites até acertar o número secreto
+    // Inicia o jogo, gera o número secreto e lê os palpites até o acerto.
     public void iniciarJogo() {
 
         System.out.println("Bem vindo ao jogo de advinhação!");
         System.out.println("Digite o limite para o numero secreto: ");
 
-        limite = scanner.nextInt(); // Lê o limite digitado pelo "usuário" e armazena na variável "limite"
-        numeroSecreto = random.nextInt(limite) + 1; // Gera um número secreto aleatório entre 1 e o limite definido pelo
-                                                    // "usuário" e armazena na variável "numeroSecreto"
+        limite = scanner.nextInt(); // Lê o limite digitado pelo usuário
+        numeroSecreto = random.nextInt(limite) + 1; // Gera um número aleatório entre 1 e o limite informado
 
         System.out.println("Tente advinhar o numero secreto entre 1 e " + limite);
 
-        // ENQUANTO o usuário não acertar o número secreto, o loop continuará
-        // solicitando palpites e fornecendo feedback sobre se o palpite é maior ou
-        // menor que o número secreto
+        // Enquanto não acertar, continua pedindo palpites.
         while (true) {
-            // Lê o palpite digitado pelo "usuário" e armazena na variável "palpite"
+            // Lê o palpite do usuário
             int palpite = scanner.nextInt();
-            // Verifica se o palpite é igual ao número secreto, se for, exibe uma mensagem
-            // de parabéns e sai do loop. Se o palpite for menor que o número secreto, exibe
-            // uma mensagem indicando que o palpite é muito baixo. Se o palpite for maior
-            // que o número secreto, exibe uma mensagem indicando que o palpite é muito
-            // alto.
+            // Verifica se acertou; caso contrário, informa se deve tentar maior ou menor.
             if (palpite == numeroSecreto) {
                 System.out.println("Parabéns! Você acertou o número secreto!");
-                break; // Sai do loop quando o "usuário" acerta o número secreto
+                break; // Sai do loop quando o usuário acerta
             }
-            // Se o palpite for menor que o número secreto, exibe uma mensagem indicando que
-            // o palpite é muito baixo. Se o palpite for maior que o número secreto, exibe
-            // uma mensagem indicando que o palpite é muito alto.
+            // Dá a dica com base no valor do palpite.
             else if (palpite < numeroSecreto) {
                 System.out.println("Você errou tente um número maior!");
             } else {
@@ -51,8 +39,7 @@ public class Jogo {
 
     }
 
-    // O método main é o ponto de entrada do programa, onde um objeto da classe Jogo
-    // é criado e o método iniciarJogo é chamado para iniciar o jogo de adivinhação
+    // Ponto de entrada do programa.
     public static void main(String[] args) {
         Jogo jogo = new Jogo();
         jogo.iniciarJogo();
