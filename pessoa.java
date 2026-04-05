@@ -1,14 +1,14 @@
 
 import java.util.Scanner;
 
-public class pessoa {
+public class Pessoa {
 
     private String nome;
     private int idade;
 
    
 
-    public pessoa(String nome, int idade) {
+    public Pessoa(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
     }
@@ -25,7 +25,7 @@ public class pessoa {
         String nome = scanner.nextLine();
         System.out.println("Digite sua idade:");
         int idade = scanner.nextInt();
-        pessoa p = new pessoa(nome, idade);
+        Pessoa p = new Pessoa(nome, idade);
         p.apresentar();
         scanner.close();
     }
